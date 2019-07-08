@@ -1,0 +1,13 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+    <terminal-device xmlns="http://openconfig.net/yang/terminal-device"
+             xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <optical-channel>
+           <config>
+                 <frequency>193000000</frequency>
+                 <target-output-power>0.0</target-output-power>
+                 <operational-mode>1</operational-mode>
+                 <line-port>LinePort1</line-port>
+           </config>
+        </optical-channel>
+    </terminal-device>
+</config>

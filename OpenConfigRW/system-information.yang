@@ -1,0 +1,56 @@
+module system-information {
+  namespace "http://sssup.it/system-information";
+  prefix si ;
+
+  organization
+    "Scuola Superiore Sant'Anna Network and Services Laboratory";
+
+  contact
+    " Editor: Andrea Sgambelluri
+              <mailto:a.sgambelluri@sssup.it>
+    ";
+
+  description
+    "This module contains a YANG definitions for system information base.";
+
+  revision 2017-10-06 {
+    description "Initial Revision.";
+  }
+
+  grouping pack-info-module {
+      leaf name { 
+        type string ;
+      }
+
+      leaf comment {
+        type string ;
+      }
+  }
+
+  container system-information {
+    leaf host-name { 
+      type string ;
+    }
+
+    leaf product-name {
+      type string ;
+    }
+
+    container package-information {
+      uses pack-info-module ;
+    }
+
+    leaf vendor {
+      type string ;
+    }
+
+    leaf software {
+      type string ;
+    }
+
+    leaf serial-number {
+      type string ;
+    }
+  }
+}
+

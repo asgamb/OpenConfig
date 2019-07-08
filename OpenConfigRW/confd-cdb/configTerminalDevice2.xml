@@ -1,0 +1,400 @@
+<config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<terminal-device xmlns="http://openconfig.net/yang/terminal-device">
+		<logical-channels>
+			<channel>
+				<!--Description: Client Port-->
+				<index>11801</index>
+				<config>
+					<index>11801</index>
+					<description>Logical channel 11801</description>
+					<admin-state>DISABLED</admin-state>
+					<rate-class xmlns:type="http://openconfig.net/yang/transport-types">type:TRIB_RATE_10G</rate-class>
+					<trib-protocol xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_10GE_LAN</trib-protocol>				
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_ETHERNET</logical-channel-type>				
+					<loopback-mode>NONE</loopback-mode>
+					<test-signal>0</test-signal>  					
+				</config>
+				<state>
+					<index>11801</index>
+					<description>Logical channel 11801</description>
+					<admin-state>DISABLED</admin-state>
+					<rate-class xmlns:type="http://openconfig.net/yang/transport-types">type:TRIB_RATE_10G</rate-class>
+					<trib-protocol xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_10GE_LAN</trib-protocol>				
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_ETHERNET</logical-channel-type>				
+					<loopback-mode>NONE</loopback-mode>
+					<test-signal>0</test-signal>
+					<link-state>UP</link-state>
+				</state>
+				<!--
+				<ethernet> 
+					<state>
+						<in-mac-control-frames>0</in-mac-control-frames>
+						<in-mac-pause-frames>0</in-mac-pause-frames>
+						<in-oversize-frames>0</in-oversize-frames>
+						<in-fragment-frames>0</in-fragment-frames>
+						<in-8021q-frames>0</in-8021q-frames>
+						<in-crc-errors>0</in-crc-errors>
+						<out-mac-control-frames>0</out-mac-control-frames>
+						<out-mac-pause-frames>0</out-mac-pause-frames>
+						<out-8021q-frames>0</out-8021q-frames>
+					</state>
+				</ethernet> 
+				-->
+				<ingress>
+					<config>
+						<transceiver>32/1/18/1</transceiver>
+						<!-- 
+						<physical-channel></physical-channel>
+						-->
+					</config>
+					<state>
+						<transceiver>32/1/18/1</transceiver>
+						<!-- 
+						<physical-channel></physical-channel>
+						-->
+					</state>
+				</ingress>
+				<logical-channel-assignments>
+					<assignment>
+						<index>1</index>
+						<config>
+							<index>1</index>
+							<description>Logical channel assigned 11</description>
+							<assignment-type>LOGICAL_CHANNEL</assignment-type>
+							<logical-channel>11811</logical-channel>
+							<allocation>10</allocation>
+						</config>
+						<state>
+							<index>1</index>
+							<description>0</description>
+							<assignment-type>LOGICAL_CHANNEL</assignment-type>
+							<logical-channel>11811</logical-channel>
+							<allocation>10</allocation>
+						</state>
+					</assignment>
+				</logical-channel-assignments>
+			</channel>
+			<channel>
+				<!--Description: Client Port-->
+				<index>11802</index>
+				<config>
+					<index>11802</index>
+					<description>Logical channel 2</description>
+					<admin-state>DISABLED</admin-state>
+					<rate-class xmlns:type="http://openconfig.net/yang/transport-types">type:TRIB_RATE_10G</rate-class>
+					<trib-protocol xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_10GE_LAN</trib-protocol>				
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_ETHERNET</logical-channel-type>				
+					<loopback-mode>NONE</loopback-mode>
+					<test-signal>1</test-signal>
+				</config>
+				<state>
+					<index>11802</index>
+					<description>0</description>
+					<admin-state>DISABLED</admin-state>
+					<rate-class xmlns:type="http://openconfig.net/yang/transport-types">type:TRIB_RATE_10G</rate-class>
+					<trib-protocol xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_10GE_LAN</trib-protocol>				
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_ETHERNET</logical-channel-type>				
+					<loopback-mode>NONE</loopback-mode>
+					<test-signal>1</test-signal>
+					<link-state>UP</link-state>
+				</state>
+				<!--
+				<ethernet> 
+					<state>
+						<in-mac-control-frames>0</in-mac-control-frames>
+						<in-mac-pause-frames>0</in-mac-pause-frames>
+						<in-oversize-frames>0</in-oversize-frames>
+						<in-fragment-frames>0</in-fragment-frames>
+						<in-8021q-frames>0</in-8021q-frames>
+						<in-crc-errors>0</in-crc-errors>
+						<out-mac-control-frames>0</out-mac-control-frames>
+						<out-mac-pause-frames>0</out-mac-pause-frames>
+						<out-8021q-frames>0</out-8021q-frames>
+					</state>
+				</ethernet> 
+				-->
+				<ingress>
+					<config>
+						<transceiver>32/1/18/2</transceiver>
+						<!-- 
+						<physical-channel></physical-channel>
+						-->
+					</config>
+					<state>
+						<transceiver>32/1/18/2</transceiver>
+						<!-- 
+						<physical-channel></physical-channel>
+						-->
+					</state>
+				</ingress>
+				<logical-channel-assignments>
+					<assignment>
+						<index>1</index>
+						<config>
+							<index>1</index>
+							<description>Logical channel assigned 11</description>
+							<assignment-type>LOGICAL_CHANNEL</assignment-type>
+							<logical-channel>11811</logical-channel>
+							<allocation>10</allocation>
+						</config>
+						<state>
+							<index>1</index>
+							<description>Logical channel assigned 11</description>
+							<assignment-type>LOGICAL_CHANNEL</assignment-type>
+							<logical-channel>11811</logical-channel>
+							<allocation>10</allocation>
+						</state>
+					</assignment>
+				</logical-channel-assignments>
+			</channel>
+			<channel>
+				<!--Description: Client Port-->
+				<index>11803</index>
+				<config>
+					<index>11803</index>
+					<description>Logical channel 3</description>
+					<admin-state>DISABLED</admin-state>
+					<rate-class xmlns:type="http://openconfig.net/yang/transport-types">type:TRIB_RATE_10G</rate-class>
+					<trib-protocol xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_10GE_LAN</trib-protocol>				
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_ETHERNET</logical-channel-type>				
+					<loopback-mode>NONE</loopback-mode>
+					<test-signal>1</test-signal>
+				</config>
+				<state>
+					<index>11803</index>
+					<description>Logical channel 3</description>
+					<admin-state>DISABLED</admin-state>
+					<rate-class xmlns:type="http://openconfig.net/yang/transport-types">type:TRIB_RATE_10G</rate-class>
+					<trib-protocol xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_10GE_LAN</trib-protocol>				
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_ETHERNET</logical-channel-type>				
+					<loopback-mode>NONE</loopback-mode>
+					<test-signal>1</test-signal>
+					<link-state>UP</link-state>
+				</state>
+				<!--
+				<ethernet> 
+					<state>
+						<in-mac-control-frames>0</in-mac-control-frames>
+						<in-mac-pause-frames>0</in-mac-pause-frames>
+						<in-oversize-frames>0</in-oversize-frames>
+						<in-fragment-frames>0</in-fragment-frames>
+						<in-8021q-frames>0</in-8021q-frames>
+						<in-crc-errors>0</in-crc-errors>
+						<out-mac-control-frames>0</out-mac-control-frames>
+						<out-mac-pause-frames>0</out-mac-pause-frames>
+						<out-8021q-frames>0</out-8021q-frames>
+					</state>
+				</ethernet> 
+				-->
+				<ingress>
+					<config>
+						<transceiver>32/1/18/3</transceiver>
+						<!-- 
+						<physical-channel></physical-channel>
+						-->
+					</config>
+					<state>
+						<transceiver>32/1/18/3</transceiver>
+						<!-- 
+						<physical-channel></physical-channel>
+						-->
+					</state>
+				</ingress>
+				<logical-channel-assignments>
+					<assignment>
+						<index>1</index>
+						<config>
+							<index>1</index>
+							<description>Logical channel assigned 11</description>
+							<assignment-type>LOGICAL_CHANNEL</assignment-type>
+							<logical-channel>11811</logical-channel>
+							<allocation>10</allocation>
+						</config>
+						<state>
+							<index>1</index>
+							<description>Logical channel assigned 11</description>
+							<assignment-type>LOGICAL_CHANNEL</assignment-type>
+							<logical-channel>11811</logical-channel>
+							<allocation>10</allocation>
+						</state>
+					</assignment>
+				</logical-channel-assignments>
+			</channel>
+			<channel>
+				<!--Description: Line (OTN) Port-->
+				<index>11811</index>
+				<config>
+					<index>11811</index>
+					<description>Logical channel 11811</description>
+					<admin-state>DISABLED</admin-state>
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_OTN</logical-channel-type>
+					<loopback-mode>NONE</loopback-mode>
+				</config>
+				<state>
+					<index>11811</index>
+					<description>Logical channel 11811</description>
+					<admin-state>DISABLED</admin-state>
+					<logical-channel-type xmlns:type="http://openconfig.net/yang/transport-types">type:PROT_OTN</logical-channel-type>
+					<loopback-mode>NONE</loopback-mode>
+					<link-state>UP</link-state>
+				</state>
+				<otn>
+					<config>
+						<tti-msg-expected>test1</tti-msg-expected>
+						<tti-msg-transmit>test1</tti-msg-transmit>
+					</config>
+					<state>
+						<tti-msg-expected>test1</tti-msg-expected>
+						<tti-msg-transmit>test1</tti-msg-transmit>
+						<tti-msg-auto>0</tti-msg-auto>
+						<tti-msg-recv>0</tti-msg-recv>
+						<rdi-msg>0</rdi-msg>
+						<errored-seconds>0</errored-seconds>
+						<severely-errored-seconds>0</severely-errored-seconds>
+						<unavailable-seconds>0</unavailable-seconds>
+						<code-violations>0</code-violations>
+						<fec-uncorrectable-words>0</fec-uncorrectable-words>
+						<fec-corrected-bytes>0</fec-corrected-bytes>
+						<fec-corrected-bits>0</fec-corrected-bits>
+						<background-block-errors>0</background-block-errors>
+						<pre-fec-ber>
+							<instant>0.0</instant>
+							<avg>0.0</avg>
+							<min>0.0</min>
+							<max>0.0</max>
+						</pre-fec-ber>	
+						<post-fec-ber>
+							<instant>0</instant>
+							<avg>0</avg>
+							<min>0</min>
+							<max>0</max>
+						</post-fec-ber>	
+						<q-value>
+							<instant>0</instant>
+							<avg>0</avg>
+							<min>0</min>
+							<max>0</max>
+							<interval>0</interval>
+						</q-value>	
+						<esnr>
+							<instant>0</instant>
+							<avg>0</avg>
+							<min>0</min>
+							<max>0</max>
+							<interval>0</interval>
+						</esnr>	
+					</state>
+				</otn>
+				<logical-channel-assignments>
+					<assignment>
+						<index>1</index>
+						<config>
+							<index>1</index>
+							<description>Optical channel assigned 100</description>
+							<allocation>100</allocation>
+							<assignment-type>OPTICAL_CHANNEL</assignment-type>
+							<optical-channel>32/1/18/11</optical-channel>
+						</config>
+						<state>
+							<index>1</index>
+							<description>Optical channel assigned 100</description>
+							<allocation>100</allocation>
+							<assignment-type>OPTICAL_CHANNEL</assignment-type>
+							<optical-channel>32/1/18/11</optical-channel>
+						</state>
+					</assignment>
+				</logical-channel-assignments>
+			</channel>
+		</logical-channels>
+	</terminal-device>
+	<components xmlns="http://openconfig.net/yang/platform">
+		<component>
+			<name>32/1/18/11</name>
+			<optical-channel xmlns="http://openconfig.net/yang/terminal-device">
+				<config>
+					<frequency>191600000</frequency>
+					<target-output-power>100</target-output-power>
+					<operational-mode>0</operational-mode>
+					<line-port>32/1/18/11</line-port>
+				</config>
+				<state>
+					<frequency>191600000</frequency>
+					<target-output-power>0</target-output-power>
+					<operational-mode>0</operational-mode>
+					<line-port>32/1/18/11</line-port>
+					<group-id>1</group-id>
+					<output-power>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+						<interval>0</interval>
+					</output-power>		
+					<input-power>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+						<interval>0</interval>
+					</input-power>		
+					<laser-bias-current>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+						<interval>0</interval>
+					</laser-bias-current>		
+					<chromatic-dispersion>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+					</chromatic-dispersion>		
+					<polarization-mode-dispersion>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+					</polarization-mode-dispersion>		
+					<second-order-polarization-mode-dispersion>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+					</second-order-polarization-mode-dispersion>		
+					<polarization-dependent-loss>
+						<instant>0</instant>
+						<avg>0</avg>
+						<min>0</min>
+						<max>0</max>
+						<interval>0</interval>
+					</polarization-dependent-loss>	
+				</state>
+			</optical-channel>
+		</component>
+		<component>
+			<name>32/1/18/1</name>
+			<config>
+				<name>32/1/18/1</name>
+			</config>	
+		</component>
+		<component>
+			<name>32/1/18/2</name>
+			<config>
+				<name>32/1/18/2</name>
+			</config>	
+		</component>
+		<component>
+			<name>32/1/18/3</name>
+			<config>
+				<name>32/1/18/3</name>
+			</config>	
+		</component>
+		<component>
+			<name>32/1/18/11</name>
+			<config>
+				<name>32/1/18/11</name>
+			</config>	
+		</component>
+	</components>
+</config>

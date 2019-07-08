@@ -1,0 +1,4 @@
+<INFO> 14-Mar-2019::16:30:39.366 mininet-vm2 confd[15696]: devel-cdb init files found in ./confd-cdb: aaa_init.xml, configTerminalDevice2Cards.xml
+<INFO> 14-Mar-2019::16:30:39.495 mininet-vm2 confd[15696]: devel-cdb Compacted CDB journal file: 1 ms (873 nodes in memory, disk size 12.14 KiB -> 11.83 KiB)
+<ERR> 14-Mar-2019::16:30:39.542 mininet-vm2 confd[15696]: devel-aaa Module "tailf-webui" in access rule "any-group/tailf-webui-user" does not exist - ignoring rule
+<INFO> 15-Mar-2019::17:40:30.865 mininet-vm2 confd[15696]: devel-c Daemon closed (name: notifier, daemon id: 0)

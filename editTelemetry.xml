@@ -1,0 +1,26 @@
+<telemetry-system xmlns="http://openconfig.net/yang/telemetry">
+    <subscriptions>
+    <dynamic-subscriptions>
+      <dynamic-subscription>
+        <id>1</id>
+        <state>
+         <id>1</id>
+         <destination-address>10.30.2.24</destination-address>
+         <destination-port>50083</destination-port>
+         <sample-interval>300</sample-interval>
+         <heartbeat-interval>3</heartbeat-interval>
+         <suppress-redundant>true</suppress-redundant>
+         <!--protocol>grpc</protocol-->
+        </state>
+        <sensor-paths>
+          <sensor-path>
+            <path>/terminal-device/logical-channels/channel[index=10101]/otn/state/pre-fec-ber/instant</path>
+            <state>
+              <path>/terminal-device/logical-channels/channel[index=10101]/otn/state/pre-fec-ber/instant</path>
+            </state>
+          </sensor-path>  
+        </sensor-paths>
+      </dynamic-subscription>
+    </dynamic-subscriptions>
+  </subscriptions>
+</telemetry-system>

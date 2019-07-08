@@ -1,0 +1,39 @@
+<DEBUG> 14-Mar-2019::16:30:39.174 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/ietf-inet-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.176 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/iana-crypt-hash.fxs
+<DEBUG> 14-Mar-2019::16:30:39.176 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/fec-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.177 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/modulation-formats.fxs
+<DEBUG> 14-Mar-2019::16:30:39.177 mininet-vm2 confd[15696]: - Loading file ./openconfig-inet-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.177 mininet-vm2 confd[15696]: - Loading file ./openconfig-telemetry-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.178 mininet-vm2 confd[15696]: - Loading file ./openconfig-alarm-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.178 mininet-vm2 confd[15696]: - Loading file ./openconfig-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.178 mininet-vm2 confd[15696]: - Loading file ./openconfig-yang-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.178 mininet-vm2 confd[15696]: - Loading file ./ietf-yang-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.179 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/ietf-netconf-monitoring.fxs
+<DEBUG> 14-Mar-2019::16:30:39.180 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/tailf-common-monitoring.fxs
+<DEBUG> 14-Mar-2019::16:30:39.180 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/ietf-netconf-acm.fxs
+<DEBUG> 14-Mar-2019::16:30:39.181 mininet-vm2 confd[15696]: - Loading file ./openconfig-platform-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.181 mininet-vm2 confd[15696]: - Loading file ./ietf-interfaces.fxs
+<DEBUG> 14-Mar-2019::16:30:39.182 mininet-vm2 confd[15696]: - Loading file ./openconfig-platform.fxs
+<DEBUG> 14-Mar-2019::16:30:39.183 mininet-vm2 confd[15696]: - Loading file ./openconfig-transport-types.fxs
+<DEBUG> 14-Mar-2019::16:30:39.183 mininet-vm2 confd[15696]: - Loading file ./openconfig-interfaces.fxs
+<DEBUG> 14-Mar-2019::16:30:39.184 mininet-vm2 confd[15696]: - Loading file ./openconfig-if-ethernet.fxs
+<DEBUG> 14-Mar-2019::16:30:39.184 mininet-vm2 confd[15696]: - Loading file ./openconfig-platform-transceiver.fxs
+<DEBUG> 14-Mar-2019::16:30:39.185 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/ietf-netconf-notifications.fxs
+<DEBUG> 14-Mar-2019::16:30:39.186 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/lib/confd/lib/netconf/netconf/priv/netconf_netmod.fxs
+<DEBUG> 14-Mar-2019::16:30:39.186 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/tailf-netconf-monitoring.fxs
+<DEBUG> 14-Mar-2019::16:30:39.187 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/tailf-confd-monitoring.fxs
+<DEBUG> 14-Mar-2019::16:30:39.188 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/tailf-acm.fxs
+<DEBUG> 14-Mar-2019::16:30:39.189 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/tailf-aaa.fxs
+<DEBUG> 14-Mar-2019::16:30:39.190 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/transponder.fxs
+<DEBUG> 14-Mar-2019::16:30:39.191 mininet-vm2 confd[15696]: - Loading file ./openconfig-terminal-device.fxs
+<DEBUG> 14-Mar-2019::16:30:39.193 mininet-vm2 confd[15696]: - Loading file ./openconfig-telemetry.fxs
+<DEBUG> 14-Mar-2019::16:30:39.194 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/links.fxs
+<DEBUG> 14-Mar-2019::16:30:39.194 mininet-vm2 confd[15696]: - Skipping file /home/mininet/confd/etc/confd/ietf-yang-types.fxs: namespace already loaded
+<DEBUG> 14-Mar-2019::16:30:39.199 mininet-vm2 confd[15696]: - Loading file /home/mininet/confd/etc/confd/confd.ccl
+<INFO> 14-Mar-2019::16:30:39.247 mininet-vm2 confd[15696]: - Starting to listen for Internal IPC on 127.0.0.1:4565
+<INFO> 14-Mar-2019::16:30:39.366 mininet-vm2 confd[15696]: - CDB load: processing file: ./confd-cdb/aaa_init.xml
+<INFO> 14-Mar-2019::16:30:39.379 mininet-vm2 confd[15696]: - CDB load: processing file: ./confd-cdb/configTerminalDevice2Cards.xml
+<INFO> 14-Mar-2019::16:30:39.549 mininet-vm2 confd[15696]: - Starting to listen for NETCONF SSH on 0.0.0.0:2022
+<INFO> 14-Mar-2019::16:30:39.556 mininet-vm2 confd[15696]: - Starting to listen for NETCONF TCP on 0.0.0.0:2023
+<INFO> 14-Mar-2019::16:30:39.568 mininet-vm2 confd[15696]: - Starting to listen for CLI SSH on 0.0.0.0:2024
+<INFO> 14-Mar-2019::16:30:39.680 mininet-vm2 confd[15696]: - ConfD started vsn: 5.4

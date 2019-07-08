@@ -1,0 +1,13 @@
+<transponder xmlns="http://sssup.it/transponder"
+             xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <transponder-id>1001</transponder-id>
+    <subcarrier-module>
+        <subcarrier-id>1</subcarrier-id>
+        <config>
+            <baud-rate>32.0</baud-rate>
+        </config>
+        <state>
+            <baud-rate>32.0</baud-rate>
+        </state>
+    </subcarrier-module>
+</transponder>

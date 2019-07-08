@@ -1,0 +1,2 @@
+<INFO> 5-Jul-2018::08:43:48.918 DO confd[2775]: audit user: admin/28 assigned to groups: admin
+<INFO> 5-Jul-2018::08:43:56.270 DO confd[2775]: audit user: admin/28 Logged out from maapi ctx=maapi (closed)

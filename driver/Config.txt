@@ -1,0 +1,4 @@
+ENABLE	% AdminState
+-1.0	% TargetPower[dBm]
+191500000	% % Frequency [MHz]
+2	% OperationalMode 0:not active; 1 active; 2: maintenance

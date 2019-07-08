@@ -1,0 +1,36 @@
+<terminal-device xmlns="http://openconfig.net/yang/terminal-device">
+	<logical-channels>
+		<channel>
+			<index>11811</index>
+			<config>
+				<admin-state>ENABLED</admin-state>
+			</config>
+			<otn>
+				<config>
+					<tti-msg-expected>test1</tti-msg-expected>
+					<tti-msg-transmit>test1</tti-msg-transmit>
+				</config>
+			</otn>
+			<logical-channel-assignments>
+				<assignment>
+					<index>1</index>
+					<config>
+						<allocation>100</allocation>
+					</config>
+				</assignment>
+			</logical-channel-assignments>
+		</channel>
+	</logical-channels>
+</terminal-device>
+<components xmlns="http://openconfig.net/yang/platform">
+	<component>
+		<name>32/1/18/11</name>
+		<optical-channel xmlns="http://openconfig.net/yang/terminal-device">
+			<config>
+				<frequency>191600000</frequency>
+				<target-output-power>100</target-output-power>
+				<operational-mode>2</operational-mode>
+			</config>
+		</optical-channel>
+	</component>
+</components>

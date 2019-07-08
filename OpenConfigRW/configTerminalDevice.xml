@@ -1,0 +1,19 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+    <components xmlns="http://openconfig.net/yang/platform"
+             xmlns:oc="http://openconfig.net/yang/terminal-device">
+        <component>
+            <name>Card1</name>
+                <config>
+	                   <name>Card1</name>
+	            </config>
+	        <oc:optical-channel>
+	    	        <oc:config>
+	                   <oc:frequency>193000000</oc:frequency>
+	                   <oc:target-output-power>0.0</oc:target-output-power>
+	                   <oc:operational-mode>1</oc:operational-mode>
+	                   <oc:line-port>LinePort1</oc:line-port>
+	        	    </oc:config>
+	        </oc:optical-channel>    		
+      </component>
+    </components>
+</config>

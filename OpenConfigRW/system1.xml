@@ -1,0 +1,14 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+    <system-information xmlns="http://sssup.it/system-information">
+        <host-name>MRDMNode1</host-name>
+        <product-name>MiniROADM</product-name>
+        <package-information>
+            <name>NetconsSSSUP</name>
+            <comment>Sensor software version</comment>
+        </package-information>
+        <vendor>Ericsson</vendor>
+        <software>SSSUP</software>
+        <serial-number>SSSUP</serial-number>
+    </system-information>
+</config>
+

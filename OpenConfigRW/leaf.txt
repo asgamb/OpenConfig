@@ -1,0 +1,164 @@
+module: openconfig-terminal-device
+   +--rw terminal-device
+      +--rw config
+      +--ro state
+      +--rw logical-channels
+      |  +--rw channel* [index]
+      |     +--rw index                          -> ../config/index
+      |     +--rw config
+      |     |  +--rw index?                  uint32
+      |     |  +--rw description?            string
+      |     |  +--rw admin-state?            oc-opt-types:admin-state-type
+      |     |  +--rw rate-class?             identityref
+      |     |  +--rw trib-protocol?          identityref
+      |     |  +--rw logical-channel-type?   identityref
+      |     |  +--rw loopback-mode?          oc-opt-types:loopback-mode-type
+      |     |  +--rw test-signal?            boolean
+      |     +--ro state
+      |     |  +--ro index?                  uint32
+      |     |  +--ro description?            string
+      |     |  +--ro admin-state?            oc-opt-types:admin-state-type
+      |     |  +--ro rate-class?             identityref
+      |     |  +--ro trib-protocol?          identityref
+      |     |  +--ro logical-channel-type?   identityref
+      |     |  +--ro loopback-mode?          oc-opt-types:loopback-mode-type
+      |     |  +--ro test-signal?            boolean
+      |     |  +--ro link-state?             enumeration
+      |     +--rw otn
+      |     |  +--rw config
+      |     |  |  +--rw tti-msg-transmit?   string
+      |     |  |  +--rw tti-msg-expected?   string
+      |     |  |  +--rw tti-msg-auto?       boolean
+      |     |  +--ro state
+      |     |     +--ro tti-msg-transmit?           string
+      |     |     +--ro tti-msg-expected?           string
+      |     |     +--ro tti-msg-auto?               boolean
+      |     |     +--ro tti-msg-recv?               string
+      |     |     +--ro rdi-msg?                    string
+      |     |     +--ro errored-seconds?            yang:counter64
+      |     |     +--ro severely-errored-seconds?   yang:counter64
+      |     |     +--ro unavailable-seconds?        yang:counter64
+      |     |     +--ro code-violations?            yang:counter64
+      |     |     +--ro fec-uncorrectable-words?    yang:counter64
+      |     |     +--ro fec-corrected-bytes?        yang:counter64
+      |     |     +--ro fec-corrected-bits?         yang:counter64
+      |     |     +--ro background-block-errors?    yang:counter64
+      |     |     +--ro pre-fec-ber
+      |     |     |  +--ro instant?   decimal64
+      |     |     |  +--ro avg?       decimal64
+      |     |     |  +--ro min?       decimal64
+      |     |     |  +--ro max?       decimal64
+      |     |     +--ro post-fec-ber
+      |     |     |  +--ro instant?   decimal64
+      |     |     |  +--ro avg?       decimal64
+      |     |     |  +--ro min?       decimal64
+      |     |     |  +--ro max?       decimal64
+      |     |     +--ro q-value
+      |     |     |  +--ro instant?    decimal64
+      |     |     |  +--ro avg?        decimal64
+      |     |     |  +--ro min?        decimal64
+      |     |     |  +--ro max?        decimal64
+      |     |     |  +--ro interval?   oc-types:stat-interval
+      |     |     +--ro esnr
+      |     |        +--ro instant?    decimal64
+      |     |        +--ro avg?        decimal64
+      |     |        +--ro min?        decimal64
+      |     |        +--ro max?        decimal64
+      |     |        +--ro interval?   oc-types:stat-interval
+      |     +--rw ethernet
+      |     |  +--rw config
+      |     |  +--ro state
+      |     |     +--ro in-mac-control-frames?    oc-yang:counter64
+      |     |     +--ro in-mac-pause-frames?      oc-yang:counter64
+      |     |     +--ro in-oversize-frames?       oc-yang:counter64
+      |     |     +--ro in-jabber-frames?         oc-yang:counter64
+      |     |     +--ro in-fragment-frames?       oc-yang:counter64
+      |     |     +--ro in-8021q-frames?          oc-yang:counter64
+      |     |     +--ro in-crc-errors?            oc-yang:counter64
+      |     |     +--ro out-mac-control-frames?   oc-yang:counter64
+      |     |     +--ro out-mac-pause-frames?     oc-yang:counter64
+      |     |     +--ro out-8021q-frames?         oc-yang:counter64
+      |     +--rw ingress
+      |     |  +--rw config
+      |     |  |  +--rw transceiver?        -> /oc-platform:components/component/name
+      |     |  |  +--rw physical-channel*   -> /oc-platform:components/component/oc-transceiver:transceiver/physical-channels/channel/index
+      |     |  +--ro state
+      |     |     +--ro transceiver?        -> /oc-platform:components/component/name
+      |     |     +--ro physical-channel*   -> /oc-platform:components/component/oc-transceiver:transceiver/physical-channels/channel/index
+      |     +--rw logical-channel-assignments
+      |        +--rw assignment* [index]
+      |           +--rw index     -> ../config/index
+      |           +--rw config
+      |           |  +--rw index?             uint32
+      |           |  +--rw description?       string
+      |           |  +--rw assignment-type?   enumeration
+      |           |  +--rw logical-channel?   -> /terminal-device/logical-channels/channel/index
+      |           |  +--rw optical-channel?   -> /oc-platform:components/component/name
+      |           |  +--rw allocation?        decimal64
+      |           +--ro state
+      |              +--ro index?             uint32
+      |              +--ro description?       string
+      |              +--ro assignment-type?   enumeration
+      |              +--ro logical-channel?   -> /terminal-device/logical-channels/channel/index
+      |              +--ro optical-channel?   -> /oc-platform:components/component/name
+      |              +--ro allocation?        decimal64
+      +--rw operational-modes
+         +--ro mode* [mode-id]
+            +--ro mode-id    -> ../state/mode-id
+            +--ro config
+            +--ro state
+               +--ro mode-id?       uint16
+               +--ro description?   string
+               +--ro vendor-id?     string
+augment /oc-platform:components/oc-platform:component:
+   +--rw optical-channel
+      +--rw config
+      |  +--rw frequency?             oc-opt-types:frequency-type
+      |  +--rw target-output-power?   decimal64
+      |  +--rw operational-mode?      uint16
+      |  +--rw line-port?             -> /oc-platform:components/component/name
+      +--ro state
+         +--ro frequency?                                   oc-opt-types:frequency-type
+         +--ro target-output-power?                         decimal64
+         +--ro operational-mode?                            uint16
+         +--ro line-port?                                   -> /oc-platform:components/component/name
+         +--ro group-id?                                    uint32
+         +--ro output-power
+         |  +--ro instant?    decimal64
+         |  +--ro avg?        decimal64
+         |  +--ro min?        decimal64
+         |  +--ro max?        decimal64
+         |  +--ro interval?   oc-types:stat-interval
+         +--ro input-power
+         |  +--ro instant?    decimal64
+         |  +--ro avg?        decimal64
+         |  +--ro min?        decimal64
+         |  +--ro max?        decimal64
+         |  +--ro interval?   oc-types:stat-interval
+         +--ro laser-bias-current
+         |  +--ro instant?    decimal64
+         |  +--ro avg?        decimal64
+         |  +--ro min?        decimal64
+         |  +--ro max?        decimal64
+         |  +--ro interval?   oc-types:stat-interval
+         +--ro chromatic-dispersion
+         |  +--ro instant?   decimal64
+         |  +--ro avg?       decimal64
+         |  +--ro min?       decimal64
+         |  +--ro max?       decimal64
+         +--ro polarization-mode-dispersion
+         |  +--ro instant?   decimal64
+         |  +--ro avg?       decimal64
+         |  +--ro min?       decimal64
+         |  +--ro max?       decimal64
+         +--ro second-order-polarization-mode-dispersion
+         |  +--ro instant?   decimal64
+         |  +--ro avg?       decimal64
+         |  +--ro min?       decimal64
+         |  +--ro max?       decimal64
+         +--ro polarization-dependent-loss
+            +--ro instant?    decimal64
+            +--ro avg?        decimal64
+            +--ro min?        decimal64
+            +--ro max?        decimal64
+            +--ro interval?   oc-types:stat-interval
