@@ -1501,12 +1501,20 @@ void *monitoring(void *vargp) {
                                     } else
                                     //parsing of FREQUENCY value
                                     if (strcmp(tokens[1],"FREQUENCY") == 0) {
-                                        char value_str[25], path[100];
-                                        strncpy(value_str, tokens[2], 9);
-                                        //value_str=tokens[2];
-                                        //confd_decimal64_to_string(value_str,&d64);
+                                        char value_str[8], path[100];
+                                        if (strlen(tokens[2])>=9){
+                                           strncpy(value_str, tokens[2], 9);
+                                        }
+                                        else{
+                                           int fill=9-(int)strlen(tokens[2]);
+                                           strcpy(value_str, tokens[2]);
+                                           char filler[fill];
+                                           sprintf(filler, "%0*d", fill, 0);
+                                           strncat(value_str, filler, fill);
+                                           printf("Final string %s\n", value_str);
+                                        }
+
                                         printf("Updating Central Frequency of component %s\n",tokens[0]);
-                                        ///components/component[name="32/1/18/11"]/optical-channel/state
                                         sprintf(path,"/components/component{channel-%s}/optical-channel/state/%s/", tokens[0], "frequency");
                                         updateDb(path,value_str);
                                     } else

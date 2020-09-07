@@ -76,7 +76,7 @@ class requester(threading.Thread):
                         screen_lock.acquire()
                         print "Connection established"
                         screen_lock.release()
-                    except Exception, e:
+                    except Exception:
                         print "Connection not established"
                         time.sleep(5)
                         self.connected = 0
@@ -99,31 +99,45 @@ class requester(threading.Thread):
         while 1:
             if key=="PRE-FEC-BER":
                #    log_channel            key         instant              average            min             Max
+               #complete communication
                conn = "11511"    +   "###"+key+"###" + "0.0002"  +  "###"+ "0.0003" + "###" + "0.0001"+"###"+"0.0004"+ "&&"
+               #short communication with computation demanded to the agent
+               #conn = "11511"    +   "###"+key+"###" + "0.0002"  +  "&&"
+               
                print conn
                if toConnect:
                   self.netconfsocket.sendall(conn)
             elif key=="ESNR":
                #    log_channel            key         instant           average          min          Max
+               #complete communication
                conn = "11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               #short communication with computation demanded to the agent
+               #conn = "11511"    +   "###"+key+"###" + "10.0"  + "&&"
                print conn
                if toConnect:
                   self.netconfsocket.sendall(conn)
             elif key=="Q-VALUE":
                #    log_channel            key         instant           average          min           Max
+               #complete communication
                conn = "11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               #short communication with computation demanded to the agent
+               #conn = "11511"    +   "###"+key+"###" + "10.0"  + "&&"
                print conn
                if toConnect:
                   self.netconfsocket.sendall(conn)
             elif key=="CHROMATIC-DISPERSION":
                #    component name              key         instant          average            min          Max
-               conn = "port-11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               #complete communication
+               conn = "11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               #short communication with computation demanded to the agent
+               #conn = "11511"    +   "###"+key+"###" + "10.0"  + "&&"
                print conn
                if toConnect:
                   self.netconfsocket.sendall(conn)
             elif key=="FREQUENCY":
                #    component name              key         freq in MHz
-               conn = "port-11511"    +   "###"+key+"###" + str(self.frequency)+ "&&"
+               #complete communication
+               conn = "11511"    +   "###"+key+"###" + str(self.frequency)+ "&&"
                print conn
                if toConnect:
                   self.netconfsocket.sendall(conn)
