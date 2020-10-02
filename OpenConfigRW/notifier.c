@@ -590,7 +590,7 @@ void *grpc_server(void *vargp) {
     char command[BUFSIZ];
     sprintf(command,"pkill -9 python");
     system(command);
-    sprintf(command,"python2.7 %sserver_telemetryCheck.py %s", GRPCPATH, GRPC_SERVER_PORT);
+    sprintf(command,"python2.7 %sserver_telemetry3.0.py %s %s", GRPCPATH, GRPC_SERVER_PORT, GRPC_SERVER_IP);
     //sprintf(commandtx,"python %snetconf-console --proto=tcp --port=2023 --host=%s --user=admin --password=admin --edit-conf  '%s'", local_path, r_addr,"/conf.xml");
     system(command);
     return NULL;
@@ -624,10 +624,10 @@ void *suscribe_grpc(void *vargp) {
 
     if ((strcmp(subscriptions[idy].protocol,"STREAM_GRPC") == 0)&&(strcmp(subscriptions[idy].encoding,"ENC_PROTO3") == 0)){
         if(strcmp(subscriptions[idy].suppress_redundant,"true") == 0){
-            sprintf(command,"python2.7 %ssubscribeTelemetry.py %s:%s %s %s:%s 1 %s %s", GRPCPATH, subscriptions[idy].destination_address, subscriptions[idy].port, subscriptions[idy].path, GRPC_SERVER_IP, GRPC_SERVER_PORT, subscriptions[idy].heartbeat_interval, subscriptions[idy].sample_interval);
+            sprintf(command,"python2.7 %ssubscribeTelemetry3.0.py %s:%s %s %s:%s 1 %s %s %d", GRPCPATH, subscriptions[idy].destination_address, subscriptions[idy].port, subscriptions[idy].path, GRPC_SERVER_IP, GRPC_SERVER_PORT, subscriptions[idy].heartbeat_interval, subscriptions[idy].sample_interval, idy);
         }
         else{
-            sprintf(command,"python2.7 %ssubscribeTelemetry.py %s:%s %s %s:%s 0 %s %s", GRPCPATH, subscriptions[idy].destination_address, subscriptions[idy].port, subscriptions[idy].path, GRPC_SERVER_IP, GRPC_SERVER_PORT, subscriptions[idy].heartbeat_interval, subscriptions[idy].sample_interval);
+            sprintf(command,"python2.7 %ssubscribeTelemetry3.0.py %s:%s %s %s:%s 0 %s %s %d", GRPCPATH, subscriptions[idy].destination_address, subscriptions[idy].port, subscriptions[idy].path, GRPC_SERVER_IP, GRPC_SERVER_PORT, subscriptions[idy].heartbeat_interval, subscriptions[idy].sample_interval, idy);
         }
         //sprintf(commandtx,"python %snetconf-console --proto=tcp --port=2023 --host=%s --user=admin --password=admin --edit-conf  '%s'", local_path, r_addr,"/conf.xml");
         //fprintf(stderr, "Command: %s\n", command);
