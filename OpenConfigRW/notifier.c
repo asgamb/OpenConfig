@@ -37,7 +37,6 @@
 #include "openconfig-telemetry.h"
 
 #include "transponder_driver.h"
-#include "filter_driver.h"
 #include "uthash.h"
 #include "utlist.h"
 #include "parameters.h"
