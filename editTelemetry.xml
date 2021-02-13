@@ -10,7 +10,8 @@
          <sample-interval>300</sample-interval>
          <heartbeat-interval>3</heartbeat-interval>
          <suppress-redundant>true</suppress-redundant>
-         <!--protocol>grpc</protocol-->
+         <protocol xmlns:type="http://openconfig.net/yang/telemetry-types">type:STREAM_GRPC</protocol>
+         <encoding xmlns:type="http://openconfig.net/yang/telemetry-types">type:ENC_PROTO3</encoding>
         </state>
         <sensor-paths>
           <sensor-path>
