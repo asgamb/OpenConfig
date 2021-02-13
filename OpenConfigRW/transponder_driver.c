@@ -146,7 +146,7 @@ void component_set_target_power(char const* const name, char const* const val) {
     struct message_s mymsg;
 
     mymsg.mtype = MESSAGE_TYPE;
-    sprintf(mymsg.mtext,"CONFIG###%s###TARGETPOWER###%s$$$", name, val);
+    sprintf(mymsg.mtext,"CONFIGOC###%s###TARGETPOWER###%s$$$", name, val);
 
     if (msgsnd(msg_queue_id, &mymsg, msg_size, IPC_NOWAIT) != 0) {
         perror("failed target_power_set"); 
@@ -170,7 +170,7 @@ void component_set_operational_mode(char const* const name, char const* const va
     struct message_s mymsg;
 
     mymsg.mtype = MESSAGE_TYPE;
-    sprintf(mymsg.mtext,"CONFIG###%s###OPERATIONALMODE###%s$$$", name, val);
+    sprintf(mymsg.mtext,"CONFIGOC###%s###OPERATIONALMODE###%s$$$", name, val);
 
     if (msgsnd(msg_queue_id, &mymsg, msg_size, IPC_NOWAIT) != 0) {
         perror("failed operational_mode_set"); 
