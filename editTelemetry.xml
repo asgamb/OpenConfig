@@ -7,8 +7,8 @@
          <id>1</id>
          <destination-address>10.30.2.24</destination-address>
          <destination-port>50083</destination-port>
-         <sample-interval>300</sample-interval>
-         <heartbeat-interval>3</heartbeat-interval>
+         <sample-interval>300000</sample-interval>
+         <heartbeat-interval>3000</heartbeat-interval>
          <suppress-redundant>true</suppress-redundant>
          <protocol xmlns:type="http://openconfig.net/yang/telemetry-types">type:STREAM_GRPC</protocol>
          <encoding xmlns:type="http://openconfig.net/yang/telemetry-types">type:ENC_PROTO3</encoding>
