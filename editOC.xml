@@ -1,0 +1,23 @@
+<components xmlns="http://openconfig.net/yang/platform">
+  <component>
+    <name>port-10101</name>
+    <optical-channel xmlns="http://openconfig.net/yang/terminal-device">
+      <config>
+        <frequency>193500000</frequency>
+        <target-output-power>-1.1</target-output-power>
+        <!--modulation-format xmlns:type="http://sssup.it/modulation-formats">type:qpsk</modulation-format-->
+        <operational-mode>2</operational-mode>
+      </config>
+    </optical-channel>
+  </component>
+</components>
+<terminal-device xmlns="http://openconfig.net/yang/terminal-device">
+  <logical-channels>
+    <channel>
+       <index>10101</index>
+       <config>
+         <admin-state>ENABLED</admin-state>
+       </config>
+    </channel>
+  </logical-channels>
+</terminal-device>
