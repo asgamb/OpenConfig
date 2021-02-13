@@ -141,7 +141,8 @@ def generate_stream(resources, check, interval, duration, sub):
                   data=OCtelemetry_pb2.TelemetryData(subscription_id=sub, observation_point=ipAddr, sequence_number=count, last_sample=True, kv=temp, timestamp=millis)
                 else: 
                   data=OCtelemetry_pb2.TelemetryData(subscription_id=sub, observation_point=ipAddr, sequence_number=count, last_sample=False, kv=temp, timestamp=millis)
-                yield data
+                old_vals=valx
+		yield data
           else:
              #datax1=OCtelemetry_pb2.TelemetryData(system_id=str(count), timestamp=ts, kv=temp )
              if(count==last_count):
@@ -207,7 +208,8 @@ def generate_stream(resources, check, interval, duration, sub):
                 else: 
                   #data=OCtelemetry_pb2.TelemetryData(observation_point=str(opoint), sequence_number=count, template_id=template, last_sample=False, kv=temp, timestamp=millis)
                   data=OCtelemetry_pb2.TelemetryData(subscription_id=sub, observation_point=ipAddr, sequence_number=count, last_sample=False, kv=temp, timestamp=millis)
-                yield data
+                old_vals=valx
+		yield data
           else:
              #datax1=OCtelemetry_pb2.TelemetryData(system_id=str(count), timestamp=ts, kv=temp )
              if(count==last_count):
