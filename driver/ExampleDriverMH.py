@@ -110,7 +110,7 @@ class requester(threading.Thread):
             elif key=="ESNR":
                #    log_channel            key         instant           average          min          Max
                #complete communication
-               conn = "11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               conn = "10101"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
                #short communication with computation demanded to the agent
                #conn = "11511"    +   "###"+key+"###" + "10.0"  + "&&"
                print conn
@@ -119,7 +119,7 @@ class requester(threading.Thread):
             elif key=="Q-VALUE":
                #    log_channel            key         instant           average          min           Max
                #complete communication
-               conn = "11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               conn = "10101"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
                #short communication with computation demanded to the agent
                #conn = "11511"    +   "###"+key+"###" + "10.0"  + "&&"
                print conn
@@ -128,7 +128,7 @@ class requester(threading.Thread):
             elif key=="CHROMATIC-DISPERSION":
                #    component name              key         instant          average            min          Max
                #complete communication
-               conn = "11511"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
+               conn = "10101"    +   "###"+key+"###" + "10.0"  +  "###"+ "10.3" + "###" + "9.8"+"###"+"11.0"+ "&&"
                #short communication with computation demanded to the agent
                #conn = "11511"    +   "###"+key+"###" + "10.0"  + "&&"
                print conn
@@ -137,7 +137,7 @@ class requester(threading.Thread):
             elif key=="FREQUENCY":
                #    component name              key         freq in MHz
                #complete communication
-               conn = "11511"    +   "###"+key+"###" + str(self.frequency)+ "&&"
+               conn = "10101"    +   "###"+key+"###" + str(self.frequency)+ "&&"
                print conn
                if toConnect:
                   self.netconfsocket.sendall(conn)
