@@ -711,7 +711,7 @@ static enum cdb_iter_ret Iter(confd_hkeypath_t *kp,
                         confd_value_t *ctag = &kp->v[kp->len-6][0];
                         switch (CONFD_GET_XMLTAG(ctag)) {
                             //target-output-power
-			    /*
+			    
                             case oc_opt_term_target_output_power:  {
                                 if(CONF_TRANSPONDER==1)
                                     component_set_target_power(name,newval);
@@ -724,7 +724,7 @@ static enum cdb_iter_ret Iter(confd_hkeypath_t *kp,
                                 }
                             }
                             break;
-                            */
+                            
                             //frequency
 			                case oc_opt_term_frequency:  {
                                 if(CONF_TRANSPONDER==1)
