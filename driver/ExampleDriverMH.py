@@ -184,7 +184,7 @@ class requester(threading.Thread):
                    self.confs.append(data)
                    screen_lock.release() 
                    [tipo, data1]=data.split('###',1)
-                   if (tipo=="CONFIG"):
+                   if (tipo=="CONFIGOC"):
                          [idx, command, data2]=data1.split('###',2)
                          if  command=="ADMINSTATE":
                            self.counter=self.counter+1
