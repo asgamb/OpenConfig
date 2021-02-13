@@ -106,6 +106,8 @@ Copy the folder grpc in the path
 	   4)set the GRPCPATH value to "/home/username/grpc/")
 	   5)set the GRPC_SERVER_IP value to local ip
 	   6)set the GRPC_SERVER_PORT value configuring the desired port
+	   7)set the path to netconf-console python file (according yo confd/bin dir in the files:
+	      server_telemetry3.0.py and subscribeTelemetry3.0.py
 	   
     -)Driver:
       edit the driver script ExampleDriverMH.py
