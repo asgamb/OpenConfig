@@ -1,0 +1,85 @@
+syntax = "proto3";
+package Telemetry;
+
+service OCTelemetry {
+    // Request an inline subscription for data at the specified path
+    rpc telemetrySubscribe(SubscriptionRequest) returns (SubscriptionResponse) {}    
+
+    // Terminates and removes an existing telemetry subscription
+    rpc cancelTelemetrySubscription(SubscriptionId) returns (NoMessage) {}    
+}
+
+service OCReply {
+    rpc StreamData(stream TelemetryData) returns (NoMessage) {}
+}
+
+message SubscriptionRequest {
+    // avoid duplicated samples
+    bool suppression =  1;
+    // interval between two different samples in milliseconds
+    uint32 interval =  2;
+    // duration of the telemetry session in milliseconds
+    uint32 duration = 3;
+    // List of points where to receive data
+    repeated Collector collectors = 4;    
+    // List of paths for which telemetry is desired
+    repeated Resource resources = 5;    
+	
+}
+
+message NoMessage {
+}
+
+message Message {
+    string mesg = 1;
+}
+
+message Collector {
+    // IP address of collector end point
+    string ip_address   = 1;    
+    // Transport protocol port number for destination
+    uint32 port = 2;
+}
+
+message Resource {
+    // Datamodel path of interest
+    Path path               = 1;  
+    // Regular expression used to filter out non interesting leaf nodes
+    string path_filter           = 2;
+    // The interval at which the value of a counter is reported
+    int64  sample_frequency = 3;
+}
+
+message SubscriptionResponse {
+    SubscriptionId      id                 = 1;
+    SubscriptionRequest actualSubscription = 2;
+}
+
+message SubscriptionId {
+    uint32 id = 1;
+}
+
+
+message KeyValue {
+    string key        = 1;
+    uint64 int_value  = 2;  
+    string str_value  = 3;
+    string prefix_str = 4;
+}
+
+message TelemetryData {
+	// system_id
+	string system_id = 1;
+	string component_id = 2;
+	string sub_component_id = 3;
+    // timestamp (common to all entries in the kv array)
+    uint64 timestamp  = 4;
+    // key / value pairs
+    repeated KeyValue kv = 5;
+}
+
+message Path {
+    // Name of the Path
+    string path = 1;
+}
+
