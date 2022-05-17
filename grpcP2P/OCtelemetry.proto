@@ -1,0 +1,121 @@
+syntax = "proto3";
+package Telemetry;
+
+service OCTelemetry {
+    // Request an inline subscription for data at the specified path
+    rpc telemetrySubscribe(SubscriptionRequest) returns (SubscriptionResponse) {}    
+
+    // Terminates and removes an existing telemetry subscription
+    rpc cancelTelemetrySubscription(SubscriptionId) returns (NoMessage) {}    
+}
+
+service OCReply {
+    rpc StreamData(stream TelemetryData) returns (NoMessage) {}
+}
+
+
+enum Correlation {
+     SELF = 0;
+     NEIGHBOUR = 1;
+     AGGREGATE = 2;
+     OTHER = 3;
+}
+
+
+
+message SubscriptionRequest {
+    // List of optional collector endpoints to send data for
+    // this subscription, specified as an ip+port combination.
+    // If no collector destinations are specified, the collector
+    // destination is inferred from requester on the rpc channel
+    string observation_point   =  1;
+    // avoid duplicated samples
+    bool suppression   =  2;
+    // interval between two different samples in milliseconds
+    uint32 interval   =  3;
+    // duration of the telemetry session in milliseconds
+    uint32 duration   =  4;
+    // id mapping the values to be monitored
+    uint32 template_id  = 5;
+    // subscription id 
+    uint64 subscription_id  = 6;
+    // correlation lightpath 
+    uint32 correlation = 7;
+    // position along the lightpath 
+    uint32 positioning = 8;
+    // List of points where to receive data
+    repeated Collector collectors = 9;    
+    // List of paths for which telemetry is desired
+    repeated Resource resources    = 10;
+    
+	
+}
+
+message NoMessage {
+}
+
+message Message {
+    string mesg = 1;
+}
+
+message Collector {
+    // IP address of collector end point
+    string ip_address   = 1;    
+    // Transport protocol port number for destination
+    uint32 port = 2;
+}
+
+message Resource {
+    // Datamodel path of interest
+    Path path               = 1;
+    
+    // Regular expression used to filter out non interesting leaf nodes
+    string path_filter           = 2;
+    
+    // The interval at which the value of a counter is reported
+    int64  sample_frequency = 3;
+}
+
+message SubscriptionResponse {
+    SubscriptionId      id                 = 1;
+    SubscriptionRequest actualSubscription = 2;
+}
+
+message SubscriptionId {
+    uint32 id = 1;
+}
+
+
+message KeyValue {
+    string key        = 1;
+    uint64 int_value  = 2;  
+    string str_value  = 3;
+    string prefix_str = 4;
+}
+
+message TelemetryData {
+    // timestamp (common to all entries in the kv array)
+    uint64 timestamp     = 1;
+    // observation point (device id or IP address)    
+    string observation_point  = 2;
+    // set of parameters to be monitored on the device
+    uint32 template_id  = 3;
+    // sequence number
+    uint32 sequence_number = 4;
+    // subscription id 
+    uint64 subscription_id  = 5;
+    // correlation lightpath 
+    uint32 correlation = 6;
+    // position along the lightpath 
+    uint32 positioning = 7;
+    // key / value pairs
+    repeated KeyValue kv = 8;
+        //last sample
+    bool last_sample  = 9;
+}
+
+message Path {
+    // Name of the Path
+    string path = 1;
+}
+
